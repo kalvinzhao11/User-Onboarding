@@ -6,7 +6,6 @@ import Form from './Form'
 import User from './User'
 import formSchema from '../validation/formSchema'
 
-
 const App = () => {
   //need initial form state, reset to this after submit
   const initialForm = {

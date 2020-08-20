@@ -1,4 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Error = styled.div`
+    color: red;
+`
+
+const Forms = styled.form`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+`
 
 const Form = (props) => {
     const {submit, update, value, error, disabled} = props
@@ -16,8 +28,7 @@ const Form = (props) => {
         update(name, checked)
     }
     return (
-        <form onSubmit={onSubmit}>
-            <button onSubmit={onsubmit} disabled={disabled}>Submit</button>
+        <Forms onSubmit={onSubmit}>
             <label>Name&nbsp;
             <input
                 value={value.name}
@@ -26,7 +37,7 @@ const Form = (props) => {
                 type='text'
             />
             </label>
-            <div>{error.name}</div>
+            <Error>{error.name}</Error>
 
             <label>Email&nbsp;
             <input
@@ -36,7 +47,7 @@ const Form = (props) => {
                 type='email'
             />
             </label>
-            {error.email}
+            <Error>{error.email}</Error>
 
             <label>Password&nbsp;
             <input
@@ -46,7 +57,7 @@ const Form = (props) => {
                 type='text'
             />
             </label>
-            {error.password}
+            <Error>{error.password}</Error>
 
         <label>Terms of service&nbsp;
         <input 
@@ -56,9 +67,9 @@ const Form = (props) => {
             onChange={onTextChange}
           />
         </label>
-        {error.tos}
-
-        </form>
+        <Error>{error.tos}</Error>
+        <button onSubmit={onsubmit} disabled={disabled}>Submit</button>
+        </Forms>
     )
 }
 
