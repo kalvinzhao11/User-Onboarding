@@ -13,6 +13,7 @@ const App = () => {
     email: '',
     password: '',
     tos: false,
+    role: ''
   }
 
   // the current form to be submitted
@@ -86,6 +87,7 @@ const App = () => {
       email: currentForm.email.trim(),
       password: currentForm.password.trim(),
       tos: currentForm.tos,
+      role: currentForm.role,
     }
     if (!appendForm.name || !appendForm.email ||!appendForm.password || !appendForm.tos) return
     postCredential(appendForm)

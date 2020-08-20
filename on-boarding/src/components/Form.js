@@ -59,6 +59,21 @@ const Form = (props) => {
             </label>
             <Error>{error.password}</Error>
 
+        <label>Role:&nbsp;
+            <select 
+                value={value.role}
+                onChange={onInputChange}
+                name="role"
+                >
+                <option value="">Select Role</option>
+                <option value="ui_ux">UI/ UX</option>
+                <option value="front_end">Front End</option>
+                <option value="backend">Backend</option>
+                <option value="ios">IOS</option>
+                <option value="data_science">Data Science</option>
+            </select>
+        </label>
+
         <label>Terms of service&nbsp;
         <input 
             type='checkbox'
@@ -68,6 +83,7 @@ const Form = (props) => {
           />
         </label>
         <Error>{error.tos}</Error>
+
         <button onSubmit={onsubmit} disabled={disabled}>Submit</button>
         </Forms>
     )
